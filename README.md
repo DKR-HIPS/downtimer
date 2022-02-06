@@ -1,5 +1,5 @@
-# DownTimer
-<b>DownTimer - Arduino-controlled timer switch with LCD and RTC</b>
+# Down-Timer
+<b>Down-Timer - Arduino-controlled timer switch with LCD and RTC</b>
 
 This project is about an Arduino-controlled timer switch to control the usage of an electrical device. It has a daily time contingent which is reset every morning. The one-button operation allows to start/stop the device, and the time already used is remembered also in case it would be unplugged. This is achieved by using the EEPROM which is present on the DS3231-type realtime clock module. Information about the current state is displayed on the LC display.
 
@@ -16,4 +16,7 @@ The specific use case for which this project was designed, is to control the net
 
 <b>Operation:</b> After uploading the program to the board using the Arduino IDE, hold down the button for more than two seconds to enter the date/time setup during first power-up. Because the DS3231 RTC module is battery backed-up it maintains the current time even without external power. Note that the jumper on pin 6 can be set, to disable access to the date/time setup during power-up. This is to reduce the risk for self-cheating in the usage scenario described above. The jumper on pin 3 prevents the code from reading/writing the EEPROM on the DS3231 which can be useful when experimenting with the program.
 
+During operation the LC display will toggle between showing the current date/time and the remain runtime, plus the ON/OFF state. Pressing the button shortly will switch on/off the LCD backlight. Holding it for a second will start the countdown or pause it when it was already running. When the countdown time (default: 240 minutes) was fully used it will change the device status to BLOCKED. The button can then be used to request the reserve time (default: 15 minutes), this will also work while the last minute of the countdown is running. If reserve time is used, it will be deduced form the time contingent of the following day.
+When the countdown is stopped with more than 60 minutes left, AND this is done on two consecutive days, it will add the saved time plus a small bonus on the third day (this is meant to be some kind of reward, as an incentive not to use the full available time every day).
+The time contingent is reset in the morning (default: at 6:00 h). The LCD backlight switch on at 8:00 h and off at 22:00 h automatically, this can be configured in the code. The program produces a few audio signals when the speaker is connected, but this is kept to a minimum. For example, it will beep 5 minutes before the "chance time" (60 minutes left) and when the time contingent is almost used up.
 
