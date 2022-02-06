@@ -20,7 +20,7 @@ During operation the LC display will toggle between showing the current date/tim
 When the countdown is stopped with more than 60 minutes left, AND this is done on two consecutive days, it will add the saved time plus a small bonus on the third day (this is meant to be some kind of reward, as an incentive not to use the full available time every day).
 The time contingent is reset in the morning (default: at 6:00 h). The LCD backlight switch on at 8:00 h and off at 22:00 h automatically, this can be configured in the code. The program produces a few audio signals when the speaker is connected, but this is kept to a minimum. For example, it will beep 5 minutes before the "chance time" (60 minutes left) and when the time contingent is almost used up.
 
-## How to build it
+## Known issues
 
 It could be tempting to power the Down-Timer and the switched device with the same 5V power supply when applicable, but by experience I recommend against it. In particular the tiny Ethernet switch which was connected to the relay in this project proved to be a rather "dirty" electrical device and caused unpredictable interference with the Arduino. So better keep the circuits separate.
 
