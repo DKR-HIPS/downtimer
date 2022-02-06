@@ -1,5 +1,5 @@
 # DownTimer
-DownTimer - Arduino-controlled timer switch with LCD and RTC
+<b>DownTimer - Arduino-controlled timer switch with LCD and RTC</b>
 
 This project is about an Arduino-controlled timer switch to control the usage of an electrical device. It has a daily time contingent which is reset every morning. The one-button operation allows to start/stop the device, and the time already used is remembered also in case it would be unplugged. This is achieved by using the EEPROM which is present on the DS3231-type realtime clock module. Information about the current state is displayed on the LCD.
 
