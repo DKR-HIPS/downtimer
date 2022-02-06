@@ -22,9 +22,9 @@ The time contingent is reset in the morning (default: at 6:00 h). The LCD backli
 
 ## Known issues
 
-It could be tempting to power the Down-Timer and the switched device with the same 5V power supply when applicable, but by experience I recommend against it. In particular the tiny Ethernet switch which was connected to the relay in this project proved to be a rather "dirty" electrical device and caused unpredictable interference with the Arduino. So better keep the circuits separate.
+It is tempting to power the Down-Timer and the switched device with the same 5V power supply when applicable, but by experience it's not recommend. In particular the tiny Ethernet switch which was connected to the relay in this project proved to be a rather "dirty" electrical device and caused unpredictable interference with the Arduino. So better keep the circuits separate.
 
-Could the relay be driven by the Arduino output pin directly? Yes, if using a relais model that uses not more than approx. 20 mA coil current it could probably work. However it's safer to use the transistor connected via R1 to the output pin in between - it's only two really cheap, tiny parts after all.
+Could the relay be driven by the Arduino output pin directly? Yes, if using a relais model that draws no more than approx. 20 mA coil current this will work. However it's safer to use the transistor connected via R1 to the output pin i- it's only two really cheap, tiny parts after all.
 
 The DS3231 modules sometimes come with onboard circuitry to charge the backup battery. If not using a rechargeable battery this must be deactivated, e.g. by destroying a tiny diode next to the battery holder as explained elsewhere. Note that this project uses the EEPROM (typically an AT24C32 chip) which is present on many DS3231-based RTC modules. If using a module without the EEPROM you would have to disable that functionality (jumper on Arduino pin 3), but then it cannot remember the countdown time if power was removed.
 
