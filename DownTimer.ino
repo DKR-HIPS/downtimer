@@ -1,6 +1,6 @@
 /*********************
 
-DownTimer Version: 2022-02-06 v1.0.4
+DownTimer Version: 2022-02-08 v1.0.5
 Arduino as a countdown timer with display on LCD, output relais to switch some external device.
 Parts: DS3231 realtime clock with onboard EEPROM memory and 16x2 LC-display via I2C. One-button date/time setup.
 
@@ -346,7 +346,7 @@ if (thistime != lasttime)
      else if (countdown >= CHANCETIME && timechance == true && CHANCETIME >= 10)
        {
         timechance = false;
-        countdown = countdown + (2 * CHANCETIME) + (ADDTIME * random(1,6));
+        countdown = TCOUNTDOWN + (2 * CHANCETIME) + (ADDTIME * random(1,6));
        }
      else if (countdown >= CHANCETIME && timechance == false && CHANCETIME >= 10)
        { 
